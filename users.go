@@ -41,7 +41,7 @@ func (c *Client) FindUsers() ([]*User, error) {
 	return data.Users, err
 }
 
-// Delete delete users.
+// DeleteUser delete users.
 func (c *Client) DeleteUser(userID string) (*User, error) {
 	req, err := http.NewRequest("DELETE", c.urlFor(fmt.Sprintf("/api/v0/users/%s", userID)).String(), nil)
 	if err != nil {
